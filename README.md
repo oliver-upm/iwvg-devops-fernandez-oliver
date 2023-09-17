@@ -4,4 +4,4 @@
 
 ### Estado del código
 [![DevOps](https://github.com/oliver-upm/iwvg-devops-fernandez-oliver/actions/workflows/test-sonar.yml/badge.svg)](https://github.com/oliver-upm/iwvg-devops-fernandez-oliver/actions/workflows/test-sonar.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=oliver-upm_iwvg-devops-fernandez-oliver&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=oliver-upm_iwvg-devops-fernandez-oliver)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=oliver-upm_iwvg-devops-fernandez-oliver&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=oliver-upm_iwvg-devops-fernandez-oliver)
