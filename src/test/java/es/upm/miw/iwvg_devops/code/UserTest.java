@@ -40,12 +40,29 @@ public class UserTest {
     }
 
     @Test
-    void fullName() {
+    void testAddFraction(){
+        Fraction fraction = new Fraction(1,2);
+        user.addFraction(fraction);
+        assertEquals(fraction, user.getFractions().get(0));
+    }
+    @Test
+    void testFullName() {
         assertEquals("Pepe Perez", user.fullName());
     }
 
     @Test
-    void initials() {
+    void testInitials() {
         assertEquals("P.", user.initials());
+    }
+
+    @Test
+    void testToString() {
+        String expected = "User{" +
+                "id='" + user.getId() + '\'' +
+                ", name='" + user.getName() + '\'' +
+                ", familyName='" + user.getFamilyName() + '\'' +
+                ", fractions=" + user.getFractions() +
+                '}';
+        assertEquals(expected, user.toString());
     }
 }
