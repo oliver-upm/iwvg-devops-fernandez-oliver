@@ -40,6 +40,50 @@ public class FractionTest {
     }
 
     @Test
+    void testIsProper() {
+        assertTrue(fraction.isProper());
+        assertFalse(new Fraction(3, 2).isProper());
+        assertFalse(new Fraction(4, 4).isProper()); // Unit fraction
+    }
+
+    @Test
+    void testIsImproper() {
+        assertFalse(fraction.isImproper());
+        assertTrue(new Fraction(3, 2).isImproper());
+        assertFalse(new Fraction(4, 4).isImproper()); // Unit fraction
+    }
+
+    @Test
+    void testIsEquivalent() {
+        assertTrue(fraction.isEquivalent(new Fraction(4, 6)));
+        assertFalse(fraction.isEquivalent(new Fraction(4, 5)));
+    }
+
+    @Test
+    void testAdd() {
+        Fraction fraction2 = new Fraction(1, 4);
+        Fraction result = fraction.add(fraction2);
+        assertEquals(11, result.getNumerator());
+        assertEquals(12, result.getDenominator());
+    }
+
+    @Test
+    void testMultiply() {
+        Fraction fraction2 = new Fraction(1, 4);
+        Fraction result = fraction.multiply(fraction2);
+        assertEquals(2, result.getNumerator());
+        assertEquals(12, result.getDenominator());
+    }
+
+    @Test
+    void testDivide() {
+        Fraction fraction2 = new Fraction(1, 4);
+        Fraction result = fraction.divide(fraction2);
+        assertEquals(8, result.getNumerator());
+        assertEquals(3, result.getDenominator());
+    }
+
+    @Test
     public void testToString() {
         String expected = "Fraction{" +
                 "numerator=" + fraction.getNumerator() +
