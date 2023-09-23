@@ -23,4 +23,14 @@ public class Searches {
                 .map(name -> name.substring(0, 1));
     }
 
+    public Stream<Double> findDecimalFractionByUserName(String name) {
+        return new UserDatabase().findAll()
+                .filter(user -> name.equals(user.getName()))
+                .flatMap(user -> user.getFractions().stream()
+                        .filter(Objects::nonNull)
+                )
+                .map(Fraction::decimal);
+    }
+
+
 }
