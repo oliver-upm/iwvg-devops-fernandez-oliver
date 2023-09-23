@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FractionTest {
+class FractionTest {
 
     private Fraction fraction;
 
@@ -84,7 +84,7 @@ public class FractionTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         String expected = "Fraction{" +
                 "numerator=" + fraction.getNumerator() +
                 ", denominator=" + fraction.getDenominator() +
