@@ -25,7 +25,15 @@ class SearchesTest {
     void testFindDecimalFractionByUserName() {
         assertEquals(List.of(0.0, 1.0, 2.0, 0.2, -0.5, 0.5, 1.0), new Searches().findDecimalFractionByUserName("Oscar").collect(Collectors.toList()));
         assertEquals(List.of(2.0, -0.2, 0.5, 1.3333333333333333), new Searches().findDecimalFractionByUserName("Ana").collect(Collectors.toList()));
+    }
 
+    @Test
+    void testFindFractionDivisionByUserId() {
+        assertEquals(0, new Searches().findFractionDivisionByUserId("1").getNumerator());
+        assertEquals(2, new Searches().findFractionDivisionByUserId("1").getDenominator());
+
+        assertEquals(120, new Searches().findFractionDivisionByUserId("2").getNumerator());
+        assertEquals(-8, new Searches().findFractionDivisionByUserId("2").getDenominator());
     }
 
 }

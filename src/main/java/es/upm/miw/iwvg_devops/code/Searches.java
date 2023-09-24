@@ -18,7 +18,8 @@ public class Searches {
 
     public Stream<String> findUserFamilyNameInitialBySomeProperFraction() {
         return new UserDatabase().findAll()
-                .filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(Fraction::isProper))
                 .map(User::getFamilyName)
                 .map(name -> name.substring(0, 1));
     }
@@ -32,5 +33,14 @@ public class Searches {
                 .map(Fraction::decimal);
     }
 
+    public Fraction findFractionDivisionByUserId(String id) {
+        return new UserDatabase().findAll()
+                .filter(user -> id.equals(user.getId()))
+                .flatMap(user -> user.getFractions().stream()
+                        .filter(Objects::nonNull)
+                )
+                .reduce(Fraction::divide)
+                .orElse(null);
+    }
 
 }
